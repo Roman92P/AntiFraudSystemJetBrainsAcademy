@@ -40,13 +40,15 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, "/api/auth/user/**").hasAuthority("ROLE_ADMINISTRATOR")
                 .antMatchers("/actuator/shutdown").permitAll() // needs to run test
                 // other matchers
-                .antMatchers("/api/antifraud/transaction/**").hasAuthority("ROLE_MERCHANT")
+                .antMatchers(HttpMethod.PUT, "/api/antifraud/transaction").hasAuthority("ROLE_SUPPORT")
+                .antMatchers(HttpMethod.POST,"/api/antifraud/transaction/**").hasAuthority("ROLE_MERCHANT")
                 .antMatchers("/api/auth/list").hasAnyAuthority("ROLE_ADMINISTRATOR","ROLE_SUPPORT")
                 .antMatchers("/api/auth/user/{username}").authenticated()
                 .antMatchers("/api/auth/role/**").hasAuthority("ROLE_ADMINISTRATOR")
                 .antMatchers("/api/auth/access/**").hasAuthority("ROLE_ADMINISTRATOR")
                 .antMatchers("/api/antifraud/suspicious-ip/**").hasAuthority("ROLE_SUPPORT")
                 .antMatchers("/api/antifraud/stolencard/**").hasAuthority("ROLE_SUPPORT")
+                .antMatchers("/api/antifraud/history/**").hasAuthority("ROLE_SUPPORT")
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // no session

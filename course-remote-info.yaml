@@ -19,10 +19,10 @@ stages:
   is_completed: true
 - id: 1165
   step: 18071
-  is_completed: false
+  is_completed: true
 - id: 1166
   step: 18072
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: Write, compile, and run

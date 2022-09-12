@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface SuspiciousIpService {
 
     SuspiciousIp addNewSuspiciousIp (SuspiciousIp suspiciousIp);
-    
+
     Optional<SuspiciousIp> findSuspiciousIpByIp(String ip);
 
     void deleteSuspiciousIp(SuspiciousIp suspiciousIp);
