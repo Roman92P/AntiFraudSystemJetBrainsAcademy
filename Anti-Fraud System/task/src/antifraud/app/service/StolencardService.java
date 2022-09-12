@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface StolencardService {
     Stolencard addNewStolencard(Stolencard stolencard);
-    
+
     boolean stolencardExist(String number);
 
     void removeStolenCard(String number);

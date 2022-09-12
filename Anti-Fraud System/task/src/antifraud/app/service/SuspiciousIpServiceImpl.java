@@ -4,7 +4,6 @@ import antifraud.app.exception.DuplicationEntityException;
 import antifraud.app.model.SuspiciousIp;
 import antifraud.app.repo.SuspiciousIpRepository;
 import antifraud.app.util.SimpleIpValidator;
-import antlr.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
